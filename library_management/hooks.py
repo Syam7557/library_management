@@ -1,15 +1,22 @@
 app_name = "library_management"
 app_title = "Library Management"
 app_publisher = "syan"
-app_description = "its library management app"
+app_description = "Library management app"
 app_email = "koppisetti.syam@gmail.com"
-app_license = "mit"
+app_license = "MIT"
 
+# Include JS for specific doctypes
+doctype_js = {
+    "Library Member": "public/js/library_member.js"
+}
+#css
+app_include_css = [
+    "/assets/library_management/css/library.css"
+]
 # Apps
 # ------------------
 
 # required_apps = []
-
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
 # 	{

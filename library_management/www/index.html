@@ -1,0 +1,30 @@
+{% extends "templates/web.html" %}
+
+{% block title %}Library Management System{% endblock %}
+
+{% block page_content %}
+<div class="hero-section text-center py-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+    <div class="container">
+        <h1 class="display-4">Welcome to Our Library</h1>
+        <p class="lead">Your gateway to knowledge</p>
+        <a href="/members" class="btn btn-light btn-lg mt-3">View Members</a>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <h3>📚 Large Collection</h3>
+            <p>Access thousands of books</p>
+        </div>
+        <div class="col-md-4 text-center">
+            <h3>👥 Active Community</h3>
+            <p>{{ member_count }} members and growing</p>
+        </div>
+        <div class="col-md-4 text-center">
+            <h3>🌐 Online Access</h3>
+            <p>Browse anytime, anywhere</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

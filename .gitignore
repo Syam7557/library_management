@@ -1,7 +1,33 @@
-.DS_Store
+# Python
 *.pyc
-*.egg-info
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
 *.swp
-tags
-node_modules
-__pycache__
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Frappe specific
+*.log
+node_modules/
+*.compiled
+.build/
+*.css.map
+
+# Local config
+sites/
