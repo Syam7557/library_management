@@ -1,41 +1,28 @@
-### Library Management
+# Library Management System
 
-its library management app
+A simple and efficient library management system built with Frappe Framework.
 
-### Installation
+## Features
 
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
+- 📚 Manage library members
+- 📖 Track books and inventory
+- 🔄 Handle book transactions
+- 📊 Generate reports
+- 🌐 Web portal for members
 
+## Installation
+
+### Prerequisites
+
+- Python 3.10+
+- MariaDB 10.6+
+- Node.js 18+
+- Frappe Framework v15
+
+### Setup
+
+1. Install Frappe Bench
 ```bash
-cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch develop
-bench install-app library_management
-```
-
-### Contributing
-
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
-
-```bash
-cd apps/library_management
-pre-commit install
-```
-
-Pre-commit is configured to use the following tools for checking and formatting your code:
-
-- ruff
-- eslint
-- prettier
-- pyupgrade
-
-### CI
-
-This app can use GitHub Actions for CI. The following workflows are configured:
-
-- CI: Installs this app and runs unit tests on every push to `develop` branch.
-- Linters: Runs [Frappe Semgrep Rules](https://github.com/frappe/semgrep-rules) and [pip-audit](https://pypi.org/project/pip-audit/) on every pull request.
-
-
-### License
-
-mit
+pip install frappe-bench
+bench init frappe-bench --frappe-branch version-15
+cd frappe-bench

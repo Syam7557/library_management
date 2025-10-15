@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Library Management</title>
+    <link rel="stylesheet" href="/assets/library_management/css/custom_login.css">
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="login-container">
+            <div class="welcome-section">
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <path d="M20 5L35 12.5V27.5L20 35L5 27.5V12.5L20 5Z" fill="white" fill-opacity="0.9"/>
+                    </svg>
+                </div>
+                <h1 class="welcome-text">Welcome<br>Back!</h1>
+            </div>
+            <div class="form-section">
+                <div class="form-content">
+                    <h2>Login</h2>
+                    <p class="subtitle">Welcome back! Please login to your account.</p>
+                    <form id="login-form" method="POST">
+                        <div class="form-group">
+                            <label for="username">User Name</label>
+                            <input type="text" id="username" name="usr" placeholder="username@gmail.com" required autocomplete="username">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="pwd" placeholder="••••••••••" required autocomplete="current-password">
+                        </div>
+                        <div class="form-options">
+                            <label class="remember-me">
+                                <input type="checkbox" name="remember_me">
+                                <span>Remember Me</span>
+                            </label>
+                            <a href="#" class="forgot-password" id="forgot-link">Forget Password?</a>
+                        </div>
+                        <button type="submit" class="btn-login" id="login-btn">
+                            <span class="btn-text">Login</span>
+                            <span class="btn-loader" style="display: none;">Logging in...</span>
+                        </button>
+                    </form>
+                    <div class="signup-link">
+                        New User? <a href="/signup">Signup</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/frappe/js/lib/jquery/jquery.min.js"></script>
+    <script src="/assets/library_management/js/custom_login.js"></script>
+</body>
+</html>

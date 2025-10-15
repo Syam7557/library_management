@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-wrapper {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.login-container {
+    display: flex;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    min-height: 600px;
+}
+
+/* Left Side - Welcome Section */
+.welcome-section {
+    flex: 1;
+    background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 50%, #ec4899 100%);
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-section::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    top: -100px;
+    right: -100px;
+}
+
+.welcome-section::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: rgba(139, 92, 246, 0.3);
+    border-radius: 50%;
+    bottom: -200px;
+    left: -150px;
+}
+
+.logo {
+    margin-bottom: 40px;
+    z-index: 1;
+}
+
+.welcome-text {
+    font-size: 64px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.1;
+    z-index: 1;
+}
+
+/* Right Side - Form Section */
+.form-section {
+    flex: 1;
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-content {
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #9ca3af;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    color: #4b5563;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.form-group input::placeholder {
+    color: #9ca3af;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #4b5563;
+    position: relative;
+}
+
+.remember-me input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    cursor: pointer;
+    accent-color: #8b5cf6;
+}
+
+.forgot-password {
+    color: #9ca3af;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: #8b5cf6;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(139, 92, 246, 0.4);
+}
+
+.btn-login:active {
+    transform: translateY(0);
+}
+
+.btn-login:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 24px;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+.signup-link a {
+    color: #8b5cf6;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.signup-link a:hover {
+    color: #7c3aed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+    }
+
+    .welcome-section {
+        padding: 40px;
+        min-height: 250px;
+    }
+
+    .welcome-text {
+        font-size: 48px;
+    }
+
+    .form-section {
+        padding: 40px 30px;
+    }
+
+    .form-content h2 {
+        font-size: 28px;
+    }
+}
+
+/* Error message styling */
+.error-message {
+    background: #fee2e2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
