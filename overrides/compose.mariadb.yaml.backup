@@ -8,11 +8,11 @@ services:
         condition: service_healthy
 
   db:
-    image: mariadb:10.3
+    image: mariadb:11.8
     healthcheck:
-      test: mysqladmin ping -h localhost --password=7557
-      start_period: 15s
-      interval: 10s
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      start_period: 5s
+      interval: 5s
       timeout: 5s
       retries: 5
     restart: unless-stopped
@@ -20,12 +20,10 @@ services:
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
       - --skip-character-set-client-handshake
-      - --innodb-buffer-pool-size=256M
-      - --innodb-log-file-size=48M
-      - --innodb-flush-log-at-trx-commit=2
-      - --innodb-file-per-table=1
+      - --skip-innodb-read-only-compressed # Temporary fix for MariaDB 10.6
     environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-7557}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-123}
+      MARIADB_AUTO_UPGRADE: 1
     volumes:
       - db-data:/var/lib/mysql
 

@@ -1,0 +1,26 @@
+services:
+  backend:
+    image: custom-library-frappe:latest
+    pull_policy: never
+    
+  frontend:
+    image: custom-library-frappe:latest
+    pull_policy: never
+    ports:
+      - "8080:8080"    
+  queue-short:
+    image: custom-library-frappe:latest
+    pull_policy: never
+    
+  queue-long:
+    image: custom-library-frappe:latest
+    pull_policy: never
+    
+  scheduler:
+    image: custom-library-frappe:latest
+    pull_policy: never
+
+  websocket:
+    image: custom-library-frappe:latest
+    pull_policy: never
+
